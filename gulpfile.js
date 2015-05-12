@@ -25,9 +25,10 @@ gulp.task('js', function(){
 });
 
 gulp.task('css', function() {
-  return gulp.src('styles/*.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest('./dist'));
+    return gulp
+        .src(['./css/custom-bootstrap.min.css', './css/**/*.css'])
+        .pipe(minifyCss())
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('build-dev', ['jade', 'js-dev', 'css']);
