@@ -5,7 +5,10 @@ var minifyCss = require('gulp-minify-css');
 
 gulp.task('jade', function(){
     return gulp
-        .src('./jade/**/*.jade')
+        .src(
+            [
+                './jade/index.jade'
+            ])
         .pipe(jade())
         .pipe(gulp.dest('./dist'));
 });
@@ -26,7 +29,7 @@ gulp.task('js', function(){
 
 gulp.task('css', function() {
     return gulp
-        .src(['./css/custom-bootstrap.min.css', './css/**/*.css'])
+        .src(['./css/custom-bootstrap.min.css', './css/*.css'])
         .pipe(minifyCss())
         .pipe(gulp.dest('./dist'));
 });
