@@ -10,28 +10,28 @@ gulp.task('jade', function(){
                 './jade/index.jade'
             ])
         .pipe(jade())
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./app'));
 });
 
 gulp.task('js-dev', function(){
     return gulp
         .src('./js/**/*.js')
         .pipe(uglify({ compress: false }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./app'));
 });
 
 gulp.task('js', function(){
     return gulp
         .src('./js/**/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./app'));
 });
 
 gulp.task('css', function() {
     return gulp
-        .src(['./css/custom-bootstrap.min.css', './css/*.css'])
+        .src('./css/*.css')
         .pipe(minifyCss())
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./app'));
 });
 
 gulp.task('build-dev', ['jade', 'js-dev', 'css']);

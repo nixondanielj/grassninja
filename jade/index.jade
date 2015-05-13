@@ -1,5 +1,13 @@
 extends ./layout.jade
 
+block css
+  link(rel='stylesheet', href='carousel.css')
+
+block nav
+  .navbar-wrapper
+    .container
+      include ./nav.jade
+
 block content
     #myCarousel.carousel.slide(data-ride='carousel')
       // Indicators
@@ -9,34 +17,33 @@ block content
         li(data-target='#myCarousel', data-slide-to='2')
       .carousel-inner
         .item.active
-          img(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='First slide')
+          img(src='img/slide1.jpg', alt='First slide')
           .container
             .carousel-caption
-              h1 Example headline.
+              h1 Serving Springfield for 20 Years
+              p.
+                At GrassNinja, we stake our business on customer service. 
+                Get an estimate for our services today.
               p
-                | Note: If you&apos;re viewing this page via a 
-                code file://
-                |  URL, the &quot;next&quot; and &quot;previous&quot; Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
-              p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
+                a.btn.btn-lg.btn-warning(href='#estimate', role='button') Schedule an Estimate!
         .item
-          img(src='data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Second slide')
+          img(src='img/slide2.jpg', alt='Second slide')
           .container
             .carousel-caption
-              h1 Another example headline.
+              h1 Grass Is Our Business
+              p.
+                We'll take care of it, so you can take care of yours.
               p
-                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+                a.btn.btn-lg.btn-primary(href='#team', role='button') Meet Our Team
         .item
           img(src='data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Third slide')
           .container
             .carousel-caption
-              h1 One more for good measure.
+              h1 Affordable. Reliable. Lawncare.
+              p.
+                You can rely on us to get you the best lawncare at the best price.
               p
-                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+                a.btn.btn-lg.btn-primary(href='#testimonials', role='button') What Our Customers Say
       a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
         span.glyphicon.glyphicon-chevron-left
       a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
@@ -49,29 +56,34 @@ block content
     .container.marketing
       // Three columns of text below the carousel
       .row
+        a(name='team') &nbsp;
         .col-lg-4
-          img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-          h2 Heading
-          p
-            | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-          p
-            a.btn.btn-default(href='#', role='button') View details &raquo;
+          img.img-circle(src='img/person1.png', alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 Richard Row
+          p.
+            Richard has run GrassNinja since its beginning in 2009. After retiring 
+            from the construction industry, Richard started GrassNinja out of his own 
+            frustration in finding qualified, reliable lawn service professionals.
         // /.col-lg-4
         .col-lg-4
-          img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-          h2 Heading
-          p
-            | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-          p
-            a.btn.btn-default(href='#', role='button') View details &raquo;
+          img.img-circle(src='img/person2.png', alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 Jane Doe
+          p.
+            Jane started with GrassNinja in 2011 and has become an invaluable 
+            member of the organization through business development, marketing, 
+            and management. 
+          p.
+            In her free time, Jane enjoys fishing and tropical 
+            vacations.
         // /.col-lg-4
         .col-lg-4
-          img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-          h2 Heading
-          p
-            | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-          p
-            a.btn.btn-default(href='#', role='button') View details &raquo;
+          img.img-circle(src='img/person3.png', alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 John Smith
+          p.
+            John joined GrassNinja in 2013 and has been a lawn service professional for over 15 years. 
+            His experience and professionalism make him an invaluable asset to our field team. 
+          p.
+            John lives in Springfield with his wife and 2 children.
         // /.col-lg-4
       // /.row
       // START THE FEATURETTES
@@ -79,10 +91,30 @@ block content
       .row.featurette
         .col-md-7
           h2.featurette-heading
-            | First featurette heading. 
-            span.text-muted It&apos;ll blow your mind.
-          p.lead
-            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            a(name='services') Full Service Lawncare. 
+            span.text-muted On your schedule.
+          p.lead.
+            We offer a wide variety of lawncare services, and we work to fit your schedule.
+          p
+            | Services include:
+            .row
+              .col-md-6.hidden-xs.hidden-sm
+                ul
+                  li Mowing & Bagging
+                  li String Trimming/Weed Whacking
+                  li Edging
+              .col-md-6.hidden-xs.hidden-sm
+                ul
+                  li Fertilization
+                  li Herbicide/Weed Removal
+                  li Hedge and Bush Trimming
+              ul.visible-xs.visible-sm
+                li Mowing & Bagging
+                li String Trimming/Weed Whacking
+                li Edging
+                li Fertilization
+                li Herbicide/Weed Removal
+                li Hedge and Bush Trimming
         .col-md-5
           img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
       hr.featurette-divider
@@ -91,18 +123,44 @@ block content
           img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
         .col-md-7
           h2.featurette-heading
-            | Oh yeah, it&apos;s that good. 
+            a(name='testimonials') Our customers love us. 
             span.text-muted See for yourself.
-          p.lead
-            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+          p
+            blockquote
+              p I've struggled with other providers for years - they've been overpriced, always late, and my yard looked awful. Now that I have GrassNinja, I'm enjoying the best customer service I've ever received.
+              footer Ron Davis
+            blockquote.blockquote-reverse
+              p My friends, family, and neighbors constantly ask how I get my lawn looking so great.
+              footer David White
+            blockquote
+              p Since switching to GrassNinja, I don't even have to think about my lawn. They take care of everything!
+              footer Sarah Baker
       hr.featurette-divider
       .row.featurette
         .col-md-7
           h2.featurette-heading
-            | And lastly, this one. 
-            span.text-muted Checkmate.
-          p.lead
-            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            a(name='estimate') Schedule your estimate today.
+          form
+            .form-group
+              label First Name
+              input#name.form-control(type='text', placeholder='John', required)
+            .form-group
+              label Phone
+              input#phone.form-control(type='tel', placeholder='(555) 555-5555' required)
+            .form-group
+              label Street
+              input#address1.form-control(type='text', placeholder='123 Main St', required)
+              input#address2.form-control(type='text', placeholder='Apt. B')
+            .form-group
+              label Zip Code
+              input#zip.form-control(type='text', placeholder='01234', required)
+            .form-group
+              label What dates and times work best for you?
+              br
+              em Unless you need to let us into your yard, you do not need to be present for the estimate. That's up to you.
+              textarea#dates.form-control(placeholder='E.g., before noon on Monday or any time during the weekend.', required)
+            .text-center
+              button#schedule.btn.btn-lg.btn-primary(type='submit') Submit
         .col-md-5
           img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
       hr.featurette-divider
@@ -112,7 +170,4 @@ block content
         p.pull-right
           a(href='#') Back to top
         p
-          | &copy; 2014 Company, Inc. &middot; 
-          a(href='#') Privacy
-          |  &middot; 
-          a(href='#') Terms
+          | &copy; 2015 Grass Ninja LLC &middot;
