@@ -6,17 +6,25 @@
     li(data-target='#myCarousel', data-slide-to='2')
   .carousel-inner
     .item.active
-      img(src='img/slide1.jpg', alt='First slide')
+      img(src='data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==')
+      .container
+        .carousel-caption
+          h1 Affordable. Reliable. Lawncare.
+          p.
+            You can rely on us to get you the best lawncare at the best price.
+          p
+            a.btn.btn-lg.btn-warning(href='#estimate', role='button') Schedule an Estimate!
+    .item
+      img(src='img/slide1.jpg')
       .container
         .carousel-caption
           h1 Serving Springfield for 20 Years
           p.
             At Lawn Service, we stake our business on customer service. 
-            Get an estimate for our services today.
           p
-            a.btn.btn-lg.btn-warning(href='#estimate', role='button') Schedule an Estimate!
+            a.btn.btn-lg.btn-primary(href='#testimonials', role='button') What Our Customers Say
     .item
-      img(src='img/slide2.jpg', alt='Second slide')
+      img(src='img/slide2.jpg')
       .container
         .carousel-caption
           h1 Grass Is Our Business
@@ -24,15 +32,6 @@
             We'll take care of it, so you can take care of yours.
           p
             a.btn.btn-lg.btn-primary(href='#team', role='button') Meet Our Team
-    .item
-      img(src='data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Third slide')
-      .container
-        .carousel-caption
-          h1 Affordable. Reliable. Lawncare.
-          p.
-            You can rely on us to get you the best lawncare at the best price.
-          p
-            a.btn.btn-lg.btn-primary(href='#testimonials', role='button') What Our Customers Say
   a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
     span.glyphicon.glyphicon-chevron-left
   a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')

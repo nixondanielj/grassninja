@@ -2,6 +2,12 @@ body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
 }
 
+#myCarousel {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
 .background {
     height:100%;
     width:100%;
@@ -55,6 +61,9 @@ body, h1, h2, h3, h4, h5, h6 {
     margin-right:7%;
     padding:7%;
     background-color:white;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 #servicesImage {
     background-image: url('img/feature1.jpg');

@@ -3,12 +3,13 @@ extends ./layout.jade
 block css
   link(rel='stylesheet', href='carousel.css')
 
+block js
+  script(src='featurette.js')
+
 block content
-    include ./carousel.jade
     .container-fluid.marketing
-      include ./team.jade
-      script(src='featurette.js')
-      hr.featurette-divider
+      .row
+        include ./carousel.jade
       .row.featurette
         .col-md-7
           h2.featurette-heading
@@ -58,6 +59,8 @@ block content
             blockquote
               p Since switching to Lawn Service, I don't even have to think about my lawn. They take care of everything!
               footer Sarah Baker
+      hr.featurette-divider
+      include ./team.jade
       hr.featurette-divider
       .row.featurette
         .col-md-7
