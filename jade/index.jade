@@ -9,84 +9,9 @@ block nav
       include ./nav.jade
 
 block content
-    #myCarousel.carousel.slide(data-ride='carousel')
-      // Indicators
-      ol.carousel-indicators
-        li.active(data-target='#myCarousel', data-slide-to='0')
-        li(data-target='#myCarousel', data-slide-to='1')
-        li(data-target='#myCarousel', data-slide-to='2')
-      .carousel-inner
-        .item.active
-          img(src='img/slide1.jpg', alt='First slide')
-          .container
-            .carousel-caption
-              h1 Serving Springfield for 20 Years
-              p.
-                At GrassNinja, we stake our business on customer service. 
-                Get an estimate for our services today.
-              p
-                a.btn.btn-lg.btn-warning(href='#estimate', role='button') Schedule an Estimate!
-        .item
-          img(src='img/slide2.jpg', alt='Second slide')
-          .container
-            .carousel-caption
-              h1 Grass Is Our Business
-              p.
-                We'll take care of it, so you can take care of yours.
-              p
-                a.btn.btn-lg.btn-primary(href='#team', role='button') Meet Our Team
-        .item
-          img(src='data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Third slide')
-          .container
-            .carousel-caption
-              h1 Affordable. Reliable. Lawncare.
-              p.
-                You can rely on us to get you the best lawncare at the best price.
-              p
-                a.btn.btn-lg.btn-primary(href='#testimonials', role='button') What Our Customers Say
-      a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
-        span.glyphicon.glyphicon-chevron-left
-      a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
-        span.glyphicon.glyphicon-chevron-right
-    // /.carousel
-    
-    // Marketing messaging and featurettes
-    // ==================================================
-    // Wrap the rest of the page in another container to center all the content.
-    .container.marketing
-      // Three columns of text below the carousel
-      .row
-        a(name='team') &nbsp;
-        .col-lg-4
-          img.img-circle(src='img/person1.png', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-          h2 Richard Row
-          p.
-            Richard has run GrassNinja since its beginning in 2009. After retiring 
-            from the construction industry, Richard started GrassNinja out of his own 
-            frustration in finding qualified, reliable lawn service professionals.
-        // /.col-lg-4
-        .col-lg-4
-          img.img-circle(src='img/person2.png', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-          h2 Jane Doe
-          p.
-            Jane started with GrassNinja in 2011 and has become an invaluable 
-            member of the organization through business development, marketing, 
-            and management. 
-          p.
-            In her free time, Jane enjoys fishing and tropical 
-            vacations.
-        // /.col-lg-4
-        .col-lg-4
-          img.img-circle(src='img/person3.png', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-          h2 John Smith
-          p.
-            John joined GrassNinja in 2013 and has been a lawn service professional for over 15 years. 
-            His experience and professionalism make him an invaluable asset to our field team. 
-          p.
-            John lives in Springfield with his wife and 2 children.
-        // /.col-lg-4
-      // /.row
-      // START THE FEATURETTES
+    include ./carousel.jade
+    .container-fluid.marketing
+      include ./team.jade
       hr.featurette-divider
       .row.featurette
         .col-md-7
@@ -115,25 +40,27 @@ block content
                 li Fertilization
                 li Herbicide/Weed Removal
                 li Hedge and Bush Trimming
-        .col-md-5
-          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+        .col-md-5.hidden-xs.hidden-sm
+          #servicesImage.featurette-image
+            div &nbsp;
       hr.featurette-divider
       .row.featurette
-        .col-md-5
-          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+        .col-md-5.hidden-xs.hidden-sm
+          #testimonialsImage.featurette-image-reverse.featurette-image
+            div &nbsp;
         .col-md-7
           h2.featurette-heading
             a(name='testimonials') Our customers love us. 
             span.text-muted See for yourself.
           p
             blockquote
-              p I've struggled with other providers for years - they've been overpriced, always late, and my yard looked awful. Now that I have GrassNinja, I'm enjoying the best customer service I've ever received.
+              p I've struggled with other providers for years - they've been overpriced, always late, and my yard looked awful. Now that I have Lawn Service, I'm enjoying the best customer service I've ever received.
               footer Ron Davis
             blockquote.blockquote-reverse
               p My friends, family, and neighbors constantly ask how I get my lawn looking so great.
               footer David White
             blockquote
-              p Since switching to GrassNinja, I don't even have to think about my lawn. They take care of everything!
+              p Since switching to Lawn Service, I don't even have to think about my lawn. They take care of everything!
               footer Sarah Baker
       hr.featurette-divider
       .row.featurette
@@ -161,8 +88,9 @@ block content
               textarea#dates.form-control(placeholder='E.g., before noon on Monday or any time during the weekend.', required)
             .text-center
               button#schedule.btn.btn-lg.btn-primary(type='submit') Submit
-        .col-md-5
-          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+        .col-md-5.hidden-xs.hidden-sm
+          #estimateImage.featurette-image
+            div &nbsp;
       hr.featurette-divider
       // /END THE FEATURETTES
       // FOOTER
@@ -170,4 +98,4 @@ block content
         p.pull-right
           a(href='#') Back to top
         p
-          | &copy; 2015 Grass Ninja LLC &middot;
+          | &copy; 2015 Lawn Service LLC &middot;
