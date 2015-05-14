@@ -1,8 +1,18 @@
-var url = window.location;
-// Will only work if string in href matches with location
-$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
-
-// Will also work for relative and absolute hrefs
-$('ul.nav a').filter(function() {
-    return this.href == url;
-}).parent().addClass('active');
+$(function() {
+  $('ul.nav a').click(function(){
+    $('ul.nav li').removeClass('active');
+    $(this).parent().addClass('active');
+  });
+  $('a[href*=#]:not([href=#], .carousel-control)').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 175
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});

@@ -16,7 +16,7 @@ gulp.task('jade', function(){
 gulp.task('js-dev', function(){
     return gulp
         .src('./js/**/*.js')
-        .pipe(uglify({ compress: false }))
+        .pipe(uglify({ compress: false, mangle: false }))
         .pipe(gulp.dest('./app'));
 });
 
