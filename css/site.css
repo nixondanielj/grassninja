@@ -2,8 +2,13 @@ body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    /*background-image: url('img/bg.png');*/
+.background {
+    height:100%;
+    width:100%;
+    background-image: url('img/bg.png');
+    position: fixed;
+    left:0; top:0;
+    z-index: -1;
 }
 
 .navbar-nav.navbar-right:last-child {
@@ -46,8 +51,10 @@ body {
     margin-left:100px;
 }
 .marketing {
-    padding-right: 7%;
-    padding-left: 7%;
+    margin-left:7%;
+    margin-right:7%;
+    padding:7%;
+    background-color:white;
 }
 #servicesImage {
     background-image: url('img/feature1.jpg');
