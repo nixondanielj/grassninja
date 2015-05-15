@@ -15,4 +15,10 @@ $(function() {
       }
     }
   });
+  var navbar = $('.navbar-collapse');
+  $(".navbar-nav li a").click(function(event) {
+    if(navbar.hasClass('in')){
+      navbar.collapse('hide');
+    }
+  });
 });
